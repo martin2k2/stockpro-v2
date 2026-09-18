@@ -1,0 +1,361 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f4f6f9;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar{
+    width:260px;
+    min-height:100vh;
+    background:#198754;
+    color:#fff;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar .logo{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    padding:20px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.sidebar a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 20px;
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.sidebar a:hover{
+    background:#157347;
+    padding-left:28px;
+}
+
+/* ===========================
+   CONTENIDO
+=========================== */
+
+.main{
+    margin-left:260px;
+    min-height:100vh;
+}
+
+.content{
+    padding:25px;
+}
+
+.topbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    height:65px;
+    padding:0 20px;
+
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+/* ===========================
+   TARJETAS
+=========================== */
+
+.card{
+    border:0;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.10);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card-header{
+    font-weight:bold;
+}
+
+/* ===========================
+   DASHBOARD
+=========================== */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card-info{
+    color:#fff;
+    border-radius:12px;
+    padding:25px;
+}
+
+.azul{background:#2563eb;}
+.verde{background:#16a34a;}
+.rojo{background:#dc2626;}
+.naranja{background:#ea580c;}
+
+/* ===========================
+   TABLAS
+=========================== */
+
+.table-responsive{
+    overflow-x:auto;
+}
+
+.table thead,
+.table td{
+    vertical-align:middle;
+}
+
+.dataTables_filter input,
+.dataTables_length select{
+    border-radius:10px;
+}
+
+/* ===========================
+   BOTONES
+=========================== */
+
+.btn{
+    border-radius:10px;
+}
+
+.badge{
+    font-size:.9rem;
+    padding:8px 12px;
+}
+
+/* ===========================
+   FORMULARIOS
+=========================== */
+
+.form-control-lg{
+    height:60px;
+}
+
+.input-group-text{
+    font-size:24px;
+}
+
+#total{
+    font-size:55px;
+    font-weight:bold;
+}
+
+/* ===========================
+   RESPONSIVE TABLETS
+=========================== */
+
+@media (max-width:991px){
+
+    .offcanvas-lg{
+        width:260px;
+    }
+
+    .sticky-top{
+        position:relative !important;
+    }
+
+    #total{
+        font-size:42px;
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE CELULARES
+=========================== */
+
+@media (max-width:768px){
+
+    .sidebar{
+        width:100%;
+        min-height:auto;
+        position:relative;
+    }
+
+    .main{
+        margin-left:0;
+        padding:15px;
+    }
+
+    .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+        height:auto;
+        padding:15px;
+    }
+
+    .table{
+        font-size:14px;
+        min-width:700px;
+    }
+
+    .table-responsive{
+        overflow-x:auto;
+    }
+
+    .btn{
+        width:100%;
+        margin-bottom:8px;
+    }
+
+    .dataTables_wrapper .row{
+        display:flex;
+        flex-direction:column;
+    }
+    .dataTables_length,
+    .dataTables_filter{
+        width:100%;
+        text-align:left !important;
+        margin-bottom:10px;
+    }
+    .dataTables_filter input{
+        width:100% !important;
+        margin-left:0 !important;
+    }
+
+    .dataTables_info{
+        text-align:center;
+        margin:10px 0;
+    }
+
+    .dataTables_paginate{
+        display:flex;
+        justify-content:center;
+    }
+
+    table.dataTable{
+        width:100% !important;
+    }
+
+
+    /*.dataTables_filter{
+        width:100%;
+        margin-bottom:10px;
+    }
+
+    .dataTables_filter input{
+        width:100% !important;
+        margin-left:0 !important;
+    }
+
+    .dataTables_length{
+        margin-bottom:10px;
+    }*/
+
+    h2,h3{
+        font-size:1.6rem;
+    }
+
+}
+
+/* ===========================
+   IMPRESIÓN
+=========================== */
+
+@media print{
+
+    button{
+        display:none;
+    }
+
+    body{
+        margin:0;
+        width:80mm;
+        background:#fff;
+    }
+
+}
+
+/* Botones rápidos del Dashboard */
+.dashboard-btn{
+    height: 68px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border-radius:10px;
+}
+
+.dashboard-btn i{
+    font-size:20px;
+    margin-bottom:4px;
+}
+
+@media (max-width:768px){
+
+    .dashboard-btn{
+        height:60px;
+        font-size:13px;
+        padding:6px;
+    }
+
+    .dashboard-btn i{
+        font-size:18px;
+        margin-bottom:2px;
+    }
+
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:20px;
+}
+
+.logo-img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+
+.logo span{
+    font-size:16px;
+    font-weight:bold;
+    color:#fff;
+}
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    overflow-y:auto;
+}
+
+.main{
+    margin-left:260px;
+}
+
+.content{
+    padding:25px;
+}
+
